@@ -143,6 +143,10 @@ input[id="menuicon"]:checked + label > span:nth-child(3) {
 		font-size: 16px;
 		padding: 0;
 	}
+	.header .gnb li:hover {
+		border-bottom: 1px solid #000;
+		color: #000;
+	}
 	.header .menu_toggle_btn span {
 		display: none;
 	}
