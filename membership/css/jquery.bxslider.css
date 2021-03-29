@@ -1,0 +1,265 @@
+/** VARIABLES
+===================================*/
+/** RESET AND LAYOUT
+===================================*/
+
+/*슬라이더 박스 전체 부분*/
+.bx-wrapper {
+  position: relative;
+  margin-bottom: 60px;
+  padding: 0;
+  *zoom: 1;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+}
+/*박스슬라이더 이미지 영역*/
+.bx-wrapper img {
+  max-width: 100%;
+  display: block;
+}
+
+/*박스슬라이더 초기값 설정*/
+.bxslider {
+  margin: 0;
+  padding: 0;
+}
+
+/*박스슬라이더 ul 스타일*/
+ul.bxslider {
+  list-style: none;
+}
+
+/*박스 슬라이더 뷰포트*/
+.bx-viewport {
+  /*fix other elements on the page moving (on Chrome)*/
+  -webkit-transform: translatez(0);
+}
+/** THEME
+===================================*/
+
+/*박스 그림자부분 = 원본*/
+/*.bx-wrapper {
+  -moz-box-shadow: 0 0 5px #ccc;
+  -webkit-box-shadow: 0 0 5px #ccc;
+  box-shadow: 0 0 5px #ccc;
+  border: 5px solid #fff;
+  background: #fff;
+}*/
+
+/*박스 그림자부분 = 커스텀 수정*/
+.bx-wrapper {
+  -moz-box-shadow: 0 0 0 #ccc;
+  -webkit-box-shadow: 0 0 0 #ccc;
+  box-shadow: 0 0 0 #ccc;
+  border: 0 solid #fff;
+  background: none;
+}
+
+/*블릿 위치 원본*/
+/*.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+}*/
+
+/*블릿 위치 커스텀 수정*/
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+}
+
+/* LOADER */
+.bx-wrapper .bx-loading {
+  min-height: 50px;
+  background: url('images/bx_loader.gif') center center no-repeat #ffffff;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+}
+/* PAGER */
+/*블릿 전체 박스 스타일 설정 원본*/
+.bx-wrapper .bx-pager {
+  text-align: center;
+  font-size: .85em;
+  font-family: Arial;
+  font-weight: bold;
+  color: #666;
+  padding-top: 20px;
+}
+
+/*블릿 버튼 사이즈 설정 원본*/
+/*.bx-wrapper .bx-pager.bx-default-pager a {
+  background: #666;
+  text-indent: -9999px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  outline: 0;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}*/
+
+/*블릿 버튼 사이즈 설정 커스텀 수정*/
+.bx-wrapper .bx-pager.bx-default-pager a {
+  background: #fff;
+  text-indent: -9999px;
+  display: block;
+  width: 30px;
+  height: 10px;
+  margin: 0 5px;
+  outline: 0;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+/*블릿 버튼 호버 효과 설정 원본*/
+/*.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active,
+.bx-wrapper .bx-pager.bx-default-pager a:focus {
+  background: #000;
+}*/
+
+/*블릿 버튼 호버 효과 설정 커스텀 수정*/
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active,
+.bx-wrapper .bx-pager.bx-default-pager a:focus {
+  background: #5d4037;
+}
+
+/*블릿 블록 설정*/
+.bx-wrapper .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+  display: inline-block;
+  vertical-align: bottom;
+  *zoom: 1;
+  *display: inline;
+}
+
+/*블릿 블록 초기화 값*/
+.bx-wrapper .bx-pager-item {
+  font-size: 0;
+  line-height: 0;
+}
+/* DIRECTION CONTROLS (NEXT / PREV) */
+/*넘기기 버튼 설정*/
+/*왼쪽 버튼 위치 설정*/
+.bx-wrapper .bx-prev {
+  left: 10px;
+  background: url('images/controls.png') no-repeat 0 -32px;
+}
+
+/*호버시 왼쪽 버튼의 배경이 해당 요소의 어느 부분에 위치할 것인지 설정*/
+.bx-wrapper .bx-prev:hover,
+.bx-wrapper .bx-prev:focus {
+  background-position: 0 0;
+}
+/*오른쪽 버튼 위치 설정*/
+.bx-wrapper .bx-next {
+  right: 10px;
+  background: url('images/controls.png') no-repeat -43px -32px;
+}
+
+/*호버시 오른쪽 버튼의 배경이 해당 요소의 어느 부분에 위치할 것인지 설정*/
+.bx-wrapper .bx-next:hover,
+.bx-wrapper .bx-next:focus {
+  background-position: -43px 0;
+}
+
+/*넘기기 버튼 스타일 설정*/
+.bx-wrapper .bx-controls-direction a {
+  position: absolute;
+  top: 50%;
+  margin-top: -16px;
+  outline: 0;
+  width: 32px;
+  height: 32px;
+  text-indent: -9999px;
+  z-index: 9999;
+}
+
+/*모든 비활성 <a> 선택
+	비활성 요소 : 활성(선택, 클릭, 입력 등)하거나 포커스 받을 수 없는 요소*/
+.bx-wrapper .bx-controls-direction a.disabled {
+  display: none;
+}
+
+
+/* AUTO CONTROLS (START / STOP) */
+/*스타트 / 스탑 버튼*/
+/*스타트 / 스탑 버튼 위치 설정*/
+.bx-wrapper .bx-controls-auto {
+  text-align: center;
+}
+
+/*스타트 버튼 스타일 설정*/
+.bx-wrapper .bx-controls-auto .bx-start {
+  display: block;
+  text-indent: -9999px;
+  width: 10px;
+  height: 11px;
+  outline: 0;
+  background: url('images/controls.png') -86px -11px no-repeat;
+  margin: 0 3px;
+}
+/*호버시 스타트 버튼의 배경이 해당 요소의 어느 부분에 위치할 것인지 설정*/
+.bx-wrapper .bx-controls-auto .bx-start:hover,
+.bx-wrapper .bx-controls-auto .bx-start.active,
+.bx-wrapper .bx-controls-auto .bx-start:focus {
+  background-position: -86px 0;
+}
+
+/*스탑 버튼 스타일 설정*/
+.bx-wrapper .bx-controls-auto .bx-stop {
+  display: block;
+  text-indent: -9999px;
+  width: 9px;
+  height: 11px;
+  outline: 0;
+  background: url('images/controls.png') -86px -44px no-repeat;
+  margin: 0 3px;
+}
+/*호버시 스탑 버튼의 배경이 해당 요소의 어느 부분에 위치할 것인지 설정*/
+.bx-wrapper .bx-controls-auto .bx-stop:hover,
+.bx-wrapper .bx-controls-auto .bx-stop.active,
+.bx-wrapper .bx-controls-auto .bx-stop:focus {
+  background-position: -86px -33px;
+}
+/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
+/*블릿과 스탑재생 버튼을 같이 사용했을 때의 위치 설정*/
+/*블릿 위치*/
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+  text-align: left;
+  width: 80%;
+}
+/*스탑재생 버튼 위 cl*/
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
+  right: 0;
+  width: 35px;
+}
+
+
+/* IMAGE CAPTIONS */
+.bx-wrapper .bx-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #666;
+  background: rgba(80, 80, 80, 0.75);
+  width: 100%;
+}
+.bx-wrapper .bx-caption span {
+  color: #fff;
+  font-family: Arial;
+  display: block;
+  font-size: .85em;
+  padding: 10px;
+}

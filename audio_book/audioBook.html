@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="웹에이전시,반응형웹개발,웹디자인,웹프로그래밍,HTML5,CSS3,자바스크립,제이쿼리">
+    <meta name="description" content="웹애드는 웹표준을 준수하고 개발하는 웹에이전시입니다.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/./css/font-awesome.min.css">
+    <link rel="shortcut icon" href="#">
+    <link rel="apple-touch-icon-precomposed" href="#">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="shortcut icon" href="../images/favicon/fav.png">
+	<link rel="apple-touch-icon-precomposed" href="../images/favicon/touchfav.png">
+	<link rel="stylesheet" href="../header/header.css">
+    <link rel="stylesheet" href="../footer/footer.css">
+    <link rel="stylesheet" href="./css/notosans_kr_CDN.css">
+    <title>오디오북</title>
+    <link rel="stylesheet" href="./css/audio.css">
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="./js/prefixfree.min.js"></script>
+    <script src="./js/wheel_event.js"></script>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script>
+		$(document).ready(function(){
+            $('#header').load('../header/header.html');
+            $('#footer').load('../footer/footer.html');
+        });
+	</script>
+</head>
+<body>
+        <header id="header"></header>
+        <article class="wheel_content">
+            <section class="wheel_main">
+                <div class="content_text">
+                    <h1>
+                        <a href="" class="typewrite" data-period="2000" data-type='[ "#오디오북", "#세상에서 가장 교양있는 수면제" ]'>
+                        </a>
+                      </h1>
+                </div>
+                <div class="content_img">
+                    <img src="images/main.jpg" alt="메인 이미지">
+                </div>
+            </section>
+        </article>
+        <article class="wheel_content">
+            <div class="video_box">
+                <iframe src="https://www.youtube.com/embed/ij_3Hl8oE70" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </article>
+        <article class="wheel_content">
+            <section class="content_last">
+                <div class="img_box">
+                    <img src="images/model.png" alt="모델 이미지">
+                </div>
+                <div class="text_box">
+                    <p>회원가입 후 바로 이용하기</p>
+                    <div class="button_box">
+                        <a id="kakao-login-btn"></a>
+                        <a href="http://developers.kakao.com/logout"></a>
+                    </div>
+                </div>
+            </section>
+        </article>
+        <footer class="footer">
+            <div class="footer_information">
+                <div class="footer_left">
+                    <nav>
+                        <ul class="footer_gnb">
+                            <li><a href="#">이용약관&nbsp;&nbsp;|</a></li>
+                            <li><a href="#">&nbsp;&nbsp;이용안내&nbsp;&nbsp;|</a></li>
+                            <li><a href="#">&nbsp;&nbsp;고객센터&nbsp;&nbsp;|</a></li>
+                            <li><a href="#">&nbsp;&nbsp;1:1문의&nbsp;&nbsp;|</a></li>
+                            <li><a href="#">&nbsp;&nbsp;매장안내&nbsp;&nbsp;|</a></li>
+                        </ul>
+                    </nav>
+                    <div class="footer_info">
+                        <p>
+                            <strong>(주)밀리의 서재</strong> | 대표이사: 서영택 <br>
+                            사업자등록번호 : 423-88-00370 통신판매업 신고번호 : 2016-서울마포-2012호 <br>
+                            주소 : 서울특별시 마포구 양화로 45, 16층 (메세나폴리스 세아타워)
+                        </p>
+                        <p class="footer_escrow">
+                            <span>
+                                 고객정보보호 책임자 : 김주영(jay@millie.town) <br>
+                                 마케팅 제휴 문의 : business@millie.town
+                            </span>
+                        </p>
+                        <p>
+                            Copyright &copy; 2021 Youna PARK., Ltd. All rights reserved.
+                        </p>
+                    </div>
+                </div>
+                <div class="footer_contact">
+                    <dl>
+                        <dt>고객센터</dt>
+                        <dd>070-7510-5415</dd>
+                        <dd>평일 10:00 ~ 18:00 / 점심 13:00 ~ 14:00</dd>
+                    </dl>
+                    <dl>
+                        <dt>INFO</dt>
+                        <dd><a href="../faq/faq.html">1:1 문의하기</a></dd>
+                        <dd>토/일/공휴일 Day Off</dd>
+                    </dl>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>
+<script type='text/javascript'>
+    //<![CDATA[
+   // 사용할 앱의 JavaScript 키를 설정해 주세요.
+   Kakao.init('69f228310b39e40a34b02fb81126f542');
+   
+   // 카카오 로그인 버튼을 생성합니다.
+   Kakao.Auth.createLoginButton({
+    container: '#kakao-login-btn',
+    success: function(authObj) {
+     
+     // 로그인 성공시, API를 호출합니다.
+     Kakao.API.request({
+      url: '/v1/user/me',
+      success: function(res) {
+       console.log(res);
+       
+       var userID = res.id;      //유저의 카카오톡 고유 id
+       var userEmail = res.kaccount_email;   //유저의 이메일
+       var userNickName = res.properties.nickname; //유저가 등록한 별명
+       
+       console.log(userID);
+       console.log(userEmail);
+       console.log(userNickName);
+      },
+      fail: function(error) {
+       alert(JSON.stringify(error));
+      }
+     });
+    },
+    fail: function(err) {
+     alert(JSON.stringify(err));
+    }
+   });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+

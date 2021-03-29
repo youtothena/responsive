@@ -1,0 +1,26 @@
+<header class="header cf">
+    <h1 class="logo">
+        <a href="/"><img src="../images/p_images/logo.png" alt="로고이미지"></a>
+        <p>밀리의 서재</p>
+    </h1>
+    <nav class="gnb">
+        <ul class="mobile_gnb">
+            <li><a href="../audio_book/audioBook.html">오디오북</a></li>
+            <li><a href="../bestSeller/bestSeller.html">추천&nbsp;리스트</a></li>
+            <li><a href="../membership/membership.html">MEMBERSHIP</a></li>
+            <li><a href="../notice/notice.html">NOTICE</a></li>
+            <li><a href="../faq/faq.html">문의사항</a></li>
+        </ul>
+    </nav>
+    <input type="checkbox" id="menuicon">
+    <label for="menuicon" class="menu_toggle_btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+</header>
+<script>
+    $('.menu_toggle_btn').click(function(){
+	$('.gnb').stop().slideToggle(400);
+});
+</script>

@@ -1,0 +1,160 @@
+@charset "UTF-8";
+* {
+	box-sizing: border-box;
+}
+body {
+	background: url('../images/background.jpg') no-repeat;
+	background-position: center;
+	background-size: 100%;
+}
+.container {
+	max-width: 80%;
+	margin: 0 auto;
+	margin-top: 150px;
+}
+.tabs {
+	width: 100%;
+}
+.tabs .tab_btn li {
+	width: 25%;
+	border: 1px solid #ddd;
+	text-align: center;
+	line-height: 46px;
+	background-color: #eaeaea;
+	cursor: pointer;
+	float: left;
+}
+.tabs .tab_btn li.on {
+	border: 1px solid #000;
+	border-bottom: none;
+	background: #fff;
+}
+.tab_contents {
+	width: 80%;
+	width: 100%;
+	height: auto;
+}
+.tab_contents .list {
+	display: none;
+}
+.tab_contents .list:first-child {
+	display: block;
+}
+.list .answer {
+	display: none;
+}
+.list .question {
+	border-bottom: 1px solid #eaeaea;
+	cursor: pointer;
+}
+.list .question dt {
+	width: 10%;
+	text-align: center;
+	font-size: 18px;
+	color: #5a4b4b;
+	font-weight: 500;
+	float: left;
+}
+.list .question dd {
+	width: 80%;
+	padding-right: 50px;
+	display: flex;
+	flex-flow: row nowrap;
+}
+.list .question dt, .list .question dd {
+	line-height: 52px;
+}
+
+.list .answer {
+	background: #fff;
+	padding: 20px 0;
+	line-height: 24px;
+}
+.list .answer dt {
+	width: 60px;
+	text-align: center;
+	float: left;
+}
+.list .answer dd {
+	width: 70%;
+	float: left;
+	padding-right: 2%;
+}
+
+.list .question dd.down {
+	background: url('../images/down.png') no-repeat;
+	background-position: right center;
+}
+.list .question dd.up {
+	background: url('../images/up.png') no-repeat;
+	background-position: right center;
+}
+strong {
+	font-weight: 700;
+}
+
+@media screen and (max-width:768px) {
+	body {
+		background: none;
+	}
+	.list .question dt {
+		font-size: 12px;
+	}
+	.list .question dt, .list .question dd {
+		padding: 10px 30px 10px 0;
+		line-height: 12px;
+	}
+	.tabs .tab_btn li {
+		font-size: 14px;
+	}
+	.list .question {
+		font-size: 12px;
+	}
+	.list .answer {
+		font-size: 11px;
+	}
+}
+footer {
+	background: none;
+}
+footer p, .footer_contact, .footer_contact dl:nth-child(1) dt+dd+dd, 
+.footer_contact dl:nth-child(2) dt+dd+dd, .footer_info strong, .footer_left nav ul {
+	color: #424242;
+}
+@media screen and (max-width:768px) {
+	.footer_information {
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		padding-top: 10;
+	}
+	.footer_left {
+		margin-right: 20px;
+	}
+	.footer_left nav ul li {
+		font-size: 8px;
+		width: 53px;
+	}
+	.footer_info {
+		font-size: 10px;
+	}
+	.footer_info strong, .footer_contact dl:nth-child(1) dt+dd, .footer_contact,
+	.footer_contact dl:nth-child(2) dt+dd, .footer_contact dl:nth-child(2) dt+dd+dd {
+		font-size: 10px;
+	}
+	.footer_contact {
+		margin-top: 20px;
+		font-weight: normal;
+	}
+}
+
+
+
+
+
+
+
+
+
+
